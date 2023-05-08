@@ -13,6 +13,7 @@ namespace Hrin_721b_IKM_kurse_project1
     public partial class Form1 : Form
     {
         private bool Mode;
+        private MajorWork MajorObject;
         public Form1()
         {
             InitializeComponent();
@@ -27,6 +28,10 @@ namespace Hrin_721b_IKM_kurse_project1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            About A = new About(); 
+            A.tAbout.Start();
+            A.ShowDialog();
+            MajorObject = new MajorWork();
             this.Mode = true;
         }
 
@@ -48,7 +53,10 @@ namespace Hrin_721b_IKM_kurse_project1
                 tbInput.Enabled = false;
                 tClock.Stop();
                 bStart.Text = "Пуск";// зміна тексту на кнопці на "Пуск"
-                this.Mode = true; 
+                this.Mode = true;
+                MajorObject.Write(tbInput.Text);// Запис даних у об'єкт
+                MajorObject.Task();// Обробка даних
+                label1.Text = MajorObject.Read();// Відображення результату
             }
         }
 
