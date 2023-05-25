@@ -146,7 +146,6 @@
             this.відкритиToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.відкритиToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.відкритиToolStripMenuItem.Text = "Відкрити";
-            this.відкритиToolStripMenuItem.Click += new System.EventHandler(this.відкритиToolStripMenuItem_Click);
             // 
             // зберегтиToolStripMenuItem
             // 
@@ -160,7 +159,7 @@
             this.зберегтиЯкToolStripMenuItem.Name = "зберегтиЯкToolStripMenuItem";
             this.зберегтиЯкToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.зберегтиЯкToolStripMenuItem.Text = "Зберегти як..";
-            this.зберегтиЯкToolStripMenuItem.Click += new System.EventHandler(this.зберегтиЯкToolStripMenuItem_Click);
+            this.зберегтиЯкToolStripMenuItem.Click += new System.EventHandler(this.ЗберегтиЯкToolStripMenuItem_Click);
             // 
             // вихідToolStripMenuItem
             // 
@@ -183,7 +182,7 @@
             this.проНакопичувачіToolStripMenuItem.Name = "проНакопичувачіToolStripMenuItem";
             this.проНакопичувачіToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.проНакопичувачіToolStripMenuItem.Text = "Про накопичувачі";
-            this.проНакопичувачіToolStripMenuItem.Click += new System.EventHandler(this.проНакопичувачіToolStripMenuItem_Click);
+            this.проНакопичувачіToolStripMenuItem.Click += new System.EventHandler(this.ПроНакопичувачіToolStripMenuItem_Click);
             // 
             // проПрограмуToolStripMenuItem
             // 

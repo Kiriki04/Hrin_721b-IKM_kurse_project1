@@ -30,6 +30,7 @@ namespace Hrin_721b_IKM_kurse_project1
         {
             MajorObject = new MajorWork();
             MajorObject.SetTime();
+            MajorObject.Modify = false;// заборона запису
             About A = new About(); 
             A.tAbout.Start();
             A.ShowDialog();
@@ -46,8 +47,6 @@ namespace Hrin_721b_IKM_kurse_project1
                 bStart.Text = "Стоп"; // зміна тексту на кнопці на "Стоп"
                 this.Mode = false;
                 пускToolStripMenuItem.Text = "Стоп";
-
-
             }
             else
             {
@@ -97,25 +96,16 @@ namespace Hrin_721b_IKM_kurse_project1
             About A = new About();
             A.ShowDialog();
         }
-
-        private void зберегтиЯкToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ЗберегтиЯкToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (SfdSave.ShowDialog() == DialogResult.OK)// Виклик діалогового вікна збереження файлу
-            {
-                MessageBox.Show(SfdSave.FileName);
+            if (SfdSave.ShowDialog() == DialogResult.OK) // Виклик діалогового вікна збереження файлу
+   
+                MajorObject.WriteSaveFileName (SfdSave.FileName); // написання імені файлу
+                MajorObject.SaveToFile(); // метод збереження в файл }
             }
-        }
 
-        private void відкритиToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (OfdOpen.ShowDialog() == DialogResult.OK) // Виклик діалогового вікна відкриття файлу
+            private void ПроНакопичувачіToolStripMenuItem_Click(object sender, EventArgs e)
             {
-                MessageBox.Show(OfdOpen.FileName);
-            }
-        }
-
-        private void проНакопичувачіToolStripMenuItem_Click(object sender, EventArgs e)
-        {
             string[] Disks = System.IO.Directory.GetLogicalDrives(); // Строковий масив злогічніх дисків
             string disk = "";   
             for (int i = 0; i < Disks.Length; i++)
